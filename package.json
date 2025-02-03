@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --ssl --ssl-cert \"$HOME/localhost+2.pem\" --ssl-key \"$HOME/localhost+2-key.pem\" --port 4201 --host 0.0.0.0",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:NgWebApp": "node dist/ng-web-app/server/server.mjs"
+    "serve:default": "ng serve --ssl --ssl-cert \"$HOME/.aspnet/https/${npm_package_name}.pem\" --ssl-key \"$HOME/.aspnet/https/${npm_package_name}.key\" --host=127.0.0.1"
   },
   "private": true,
   "dependencies": {
@@ -21,10 +21,21 @@
     "@angular/platform-server": "^19.1.0",
     "@angular/router": "^19.1.0",
     "@angular/ssr": "^19.1.2",
+    "bootstrap": "^5.3.3",
     "express": "^4.18.2",
+    "feather-icons": "^4.29.0",
+    "ngx-toasta": "^4.0.0",
+    "notyf": "^3.10.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
+  },
+  "overrides": {
+    "@ng-bootstrap/ng-bootstrap": {
+      "@angular/common": "$@angular/common",
+      "@angular/core": "$@angular/core",
+      "@angular/forms": "$@angular/forms"
+    }
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^19.1.2",

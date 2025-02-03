@@ -6,8 +6,18 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+	<link href="css/light.css" rel="stylesheet">
+  <style>
+		body {
+			opacity: 0;
+		}
+	</style>
 </head>
-<body>
-  <app-root></app-root>
+<body data-theme="light" data-layout="fluid" data-sidebar-position="left" data-sidebar-layout="default">
+    <app-root></app-root>
+	<!-- <script src="js/settings.js"></script> -->
+	<script src="js/app.js"></script>
 </body>
 </html>
